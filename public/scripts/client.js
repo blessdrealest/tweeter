@@ -3,42 +3,22 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Fake data taken from initial-tweets.json
-const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+//re-encode texts for protection from unsafe characters
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
+const data = [];
+//loop through all tweets
 const renderTweets = function(tweets) {
   tweets.forEach(tweet => {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($($tweet));
-    
+    $('#tweets-container').append($tweet);
   });
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-}
+};
+//create a new tweet element from data
 const createTweetElement = function(data) {
   let tweetElement = `<article class="tweet">
   <header>
@@ -53,7 +33,7 @@ const createTweetElement = function(data) {
   </div>
   <hr />
   <footer class="tweet-footer">
-    <div class="left">${data.created_at}</div>
+    <div class="left">${timeago.format(data.created_at)}</div>
     <div class="right">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
@@ -64,4 +44,11 @@ const createTweetElement = function(data) {
 return tweetElement;
 } 
 
-renderTweets(data);
+//Ajax Get request to take tweets from server and add it to renderTweets
+const loadTweets = function() {
+  $.get("/tweets", function(newTweet) {
+    renderTweets(newTweet.reverse()); //use reverse for newest to oldest tweets display
+  });
+};
+
+loadTweets();
