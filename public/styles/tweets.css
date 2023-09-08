@@ -1,65 +1,65 @@
    .tweets-container {
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  background-color: #f4f1ec;
-  font-family: sans-serif;
-  flex-direction: column;
-  margin-top: 30px;
-} 
+     display: flex;
+     flex-flow: row wrap;
+     width: 100%;
+     background-color: #f4f1ec;
+     font-family: sans-serif;
+     flex-direction: column;
+     margin-top: 30px;
+   }
 
-article.tweet {
-  flex-flow: row wrap;
-  width: 100%;
-  border: 3px solid black;
-  margin-top: 10px;
-  padding: 20px; 
-}
+   article.tweet {
+     flex-flow: row wrap;
+     width: 100%;
+     border: 3px solid black;
+     margin-top: 10px;
+     padding: 20px;
+   }
 
-article.tweet:hover {
-  box-shadow: 5px 5px darkgrey;
-}
+   article.tweet:hover {
+     box-shadow: 5px 5px darkgrey;
+   }
 
-article.tweet header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: inherit;
-  background-image: none;
-  margin: 0;
-  align-items: center;
-  padding: 5px 0px 15px 0px;
-}
+   article.tweet header {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     background-color: inherit;
+     background-image: none;
+     margin: 0;
+     align-items: center;
+     padding: 5px 0px 15px 0px;
+   }
 
-article.tweet header .right {
-  color: lightgrey;
-}
+   article.tweet header .right {
+     color: lightgrey;
+   }
 
-article.tweet header .left {
-  display: flex;
-}
+   article.tweet header .left {
+     display: flex;
+   }
 
-article.tweet footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 14px;
-} 
+   article.tweet footer {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     font-size: 14px;
+   }
 
-article.tweet hr {
-  margin-left: -10px;
-  margin-right: -10px;
-}
+   article.tweet hr {
+     margin-left: -10px;
+     margin-right: -10px;
+   }
 
-article.tweet footer .right > i {
-  color: blue;
-}
+   article.tweet footer .right>i {
+     color: blue;
+   }
 
-article.tweet footer .right > i:hover {
-  color: gold;
-}
+   article.tweet footer .right>i:hover {
+     color: gold;
+   }
 
-article.tweet .tweet-body {
-  min-height: 50px;
-  padding: 15px 0px 10px 0px;
-}
+   article.tweet .tweet-body {
+     min-height: 50px;
+     padding: 15px 0px 10px 0px;
+   }

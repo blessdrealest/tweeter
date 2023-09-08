@@ -5,9 +5,12 @@
  */
 html {
   box-sizing: border-box;
-  
+
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -31,6 +34,7 @@ main {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
