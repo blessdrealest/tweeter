@@ -37,7 +37,13 @@
 
    article.tweet header .left {
      display: flex;
+     align-items: center;
    }
+
+   article.tweet header .left img {
+    width: 24px;
+    height: 24px;
+  }
 
    article.tweet footer {
      display: flex;
